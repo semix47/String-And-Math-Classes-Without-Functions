@@ -1,0 +1,22 @@
+public string split(string metin, char karakter)
+        {
+            string temporary = "";
+            char[] dizi = metin.ToCharArray();
+            ArrayList ary = new ArrayList();
+         
+            ary.AddRange(dizi);
+            for (int i = 0; i < ary.Count; i++)
+            {
+                if ((char)ary[i] == karakter)
+                {
+                    ary.RemoveAt(i);
+                    ary.Insert(i,"\n");
+                }
+            }
+            
+            foreach (var item in ary)
+            {
+                temporary += item;
+            }
+            return temporary;
+        }
